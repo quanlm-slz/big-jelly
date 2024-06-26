@@ -1,5 +1,5 @@
 const HomePage: React.FC = () => {
-  return <div className="text-primary">HomePage</div>
-}
+  return <div className="bg-primary">HomePage</div>;
+};
 
-export default HomePage
+export default HomePage;

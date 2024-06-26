@@ -1,0 +1,7 @@
+.links {
+  @apply flex;
+}
+
+.link {
+  @apply mx-4 my-auto tracking-tighter uppercase;
+}
