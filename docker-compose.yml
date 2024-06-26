@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build:
+      context: frontend
+      dockerfile: development.Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./frontend/:/app/
+    ports:
+      - 3000:3000
+    command: bash -c "npm run dev"
