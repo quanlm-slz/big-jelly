@@ -1,5 +1,5 @@
 .container {
-  @apply bg-secondary flex flex-col gap-7;
+  @apply bg-secondary flex flex-col gap-4;
 }
 
 .title {
@@ -11,5 +11,20 @@
 }
 
 .content {
-  @apply mx-12 my-8 text-neutral text-lg text-center font-medium tracking-tight;
+  @apply mx-12 my-6 text-neutral text-lg text-center font-medium tracking-tight;
+}
+
+.links {
+  @apply flex mx-auto gap-8
+}
+
+.buttonGroup {
+  @apply flex m-auto;
+  .button {
+    @apply bg-primary border-primary text-secondary;
+    transition-duration: 0.5s;
+    &:hover {
+      @apply bg-secondary text-primary;
+    }
+  }
 }

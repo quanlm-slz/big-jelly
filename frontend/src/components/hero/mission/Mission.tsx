@@ -1,5 +1,7 @@
-import { mission } from "@/data/data";
+import { mission, missionLinks } from "@/data/data";
 import styles from "./mission.module.scss";
+import MissionLink from "./mission-link/MissionLink";
+import MainButton from "@/components/main-button/MainButton";
 
 const Mission: React.FC = () => {
   const { title, content } = mission;
@@ -10,6 +12,16 @@ const Mission: React.FC = () => {
       </div>
       <div className={styles.content}>
         <span>{content}</span>
+      </div>
+      <div className={styles.links}>
+        {missionLinks.map((link) => (
+          <MissionLink {...link} />
+        ))}
+      </div>
+      <div className={styles.buttonGroup}>
+        <MainButton url="/" buttonStyle={styles.button}>
+          <span>Đặt Giao Ngay</span>
+        </MainButton>
       </div>
     </div>
   );

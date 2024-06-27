@@ -1,3 +1,6 @@
+import { MissionLinkInterface } from "@/utils/types";
+import { bread, drink, fries, snack } from "./svg";
+
 export const intro = {
   title: "Giới thiệu",
   subtitle: "Big Belly - người bạn mới của người tiêu dùng Việt Nam",
@@ -15,5 +18,28 @@ export const mission = {
     "Big Belly mong muốn làm người bạn đồng hành thân thiết, " +
     "mang đến bữa ăn ngon, tiện lợi cho người tiêu dùng Việt Name " +
     "với các sản phẩm Bánh Mì, Chà Bông, Pate, Cadé cùng nhiều sản phẩm " +
-    "tươi ngon khác, đảm bảo vệ sinh an toàn thực phẩm."
-}
+    "tươi ngon khác, đảm bảo vệ sinh an toàn thực phẩm.",
+};
+
+export const missionLinks: MissionLinkInterface[] = [
+  {
+    url: "/",
+    icon: bread,
+    label: "Bánh Mì",
+  },
+  {
+    url: "/",
+    icon: snack,
+    label: "Ăn Kèm",
+  },
+  {
+    url: "/",
+    icon: fries,
+    label: "Ăn Vặt",
+  },
+  {
+    url: "/",
+    icon: drink,
+    label: "Thức Uống",
+  },
+];

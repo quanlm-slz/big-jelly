@@ -1,0 +1,15 @@
+.container {
+  @apply flex flex-col w-24 text-neutral hover:text-primary;
+}
+
+.icon {
+  @apply h-14 mx-4 relative;
+}
+
+.label {
+  @apply h-10 flex font-medium;
+  
+  span {
+    @apply m-auto text-lg;
+  }
+}
