@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply h-[2000px] w-lvw flex flex-col
+    @apply h-[2000px] w-lvw mr-1 overflow-x-clip flex flex-col
   }
 }

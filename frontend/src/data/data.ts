@@ -8,3 +8,12 @@ export const intro = {
     "trong màu sắc đương đại, tạo nên những món ăn đầy màu sắc, " +
     "thú vị & tiện lợi cho người Việt Nam trong cuộc sống hiện đại. ",
 };
+
+export const mission = {
+  title: "Sứ mệnh",
+  content:
+    "Big Belly mong muốn làm người bạn đồng hành thân thiết, " +
+    "mang đến bữa ăn ngon, tiện lợi cho người tiêu dùng Việt Name " +
+    "với các sản phẩm Bánh Mì, Chà Bông, Pate, Cadé cùng nhiều sản phẩm " +
+    "tươi ngon khác, đảm bảo vệ sinh an toàn thực phẩm."
+}

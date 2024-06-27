@@ -1,0 +1,15 @@
+.container {
+  @apply bg-secondary flex flex-col gap-7;
+}
+
+.title {
+  @apply h-28 text-6xl italic uppercase text-neutral flex;
+
+  * {
+    @apply m-auto
+  }
+}
+
+.content {
+  @apply mx-12 my-8 text-neutral text-lg text-center font-medium tracking-tight;
+}
