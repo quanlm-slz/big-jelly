@@ -1,4 +1,4 @@
-import ClientNavbar from "@/components/navbar/ClientNavbar";
+import ClientNavbar from "@/components/client-navbar/ClientNavbar";
 import { PropsWithChildren } from "react";
 
 const HomeLayout: React.FC<PropsWithChildren> = ({ children }) => {

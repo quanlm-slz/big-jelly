@@ -1,0 +1,15 @@
+.container {
+  @apply grid grid-cols-2 grid-rows-2 w-full;
+  & > div {
+    @apply h-[475px] w-auto relative;
+  }
+}
+
+.image {
+  @apply bg-primary hover:scale-125;
+  transition-duration: 0.5s;
+}
+
+.mission {
+  @apply bg-secondary;
+}

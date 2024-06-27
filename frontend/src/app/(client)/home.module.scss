@@ -1,0 +1,14 @@
+.container {
+}
+
+.slideshow {
+  @apply relative w-full h-96 flex;
+}
+.slideShowButton {
+  @apply border-secondary text-secondary mt-72;
+  transition-duration: 0.5s;
+
+  &:hover {
+    @apply cursor-pointer bg-primary border-none;
+  }
+}

@@ -1,0 +1,6 @@
+.container {
+  @apply w-4/5 h-20 mx-auto flex;
+}
+.brand {
+  @apply mx-10 my-auto text-4xl text-primary font-bold tracking-tighter hover:cursor-pointer;
+}

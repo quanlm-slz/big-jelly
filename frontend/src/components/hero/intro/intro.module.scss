@@ -1,0 +1,34 @@
+.container {
+  @apply bg-secondary flex flex-col gap-7;
+}
+
+.title {
+  @apply h-44 w-full text-6xl italic uppercase text-neutral flex;
+
+  * {
+    @apply m-auto
+  }
+}
+
+.subtitle {
+  @apply w-full text-xl text-neutral flex font-medium;
+
+  * {
+    @apply m-auto
+  }
+}
+
+.content {
+  @apply mx-12 text-neutral text-base text-center font-medium tracking-wide;
+}
+
+.buttonGroup {
+  @apply flex m-auto;
+  .button {
+    @apply bg-primary border-primary text-secondary;
+    transition-duration: 0.5s;
+    &:hover {
+      @apply bg-secondary text-primary;
+    }
+  }
+}

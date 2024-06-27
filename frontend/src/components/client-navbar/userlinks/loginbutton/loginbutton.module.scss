@@ -1,0 +1,20 @@
+.container {
+  @apply h-[28px] w-[28px] flex flex-col justify-evenly hover:cursor-pointer;
+}
+
+.line {
+  transition: transform 2s, opacity 2s;
+  @apply w-[28px] h-[2px] m-auto rounded-sm bg-primary;
+}
+
+.line.active:nth-child(1) {
+  @apply translate-y-[10px] rotate-45;
+}
+
+.line.active:nth-child(2) {
+  @apply opacity-0;
+}
+
+.line.active:nth-child(3) {
+  @apply -translate-y-[10px] -rotate-45;
+}

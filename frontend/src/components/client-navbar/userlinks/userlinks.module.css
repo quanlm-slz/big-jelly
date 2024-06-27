@@ -1,3 +1,7 @@
 .container {
   @apply flex my-auto flex-grow justify-end gap-4;
 }
+
+.icon {
+  @apply hover:cursor-pointer;
+}
