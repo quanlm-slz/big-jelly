@@ -14,8 +14,8 @@ const Mission: React.FC = () => {
         <span>{content}</span>
       </div>
       <div className={styles.links}>
-        {missionLinks.map((link) => (
-          <MissionLink {...link} />
+        {missionLinks.map((link, id) => (
+          <MissionLink key={id} {...link} />
         ))}
       </div>
       <div className={styles.buttonGroup}>

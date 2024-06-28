@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import styles from './home.module.scss'
-import Link from 'next/link';
 import Hero from '@/components/hero/Hero';
 import { mainSlideshow } from '@/data/image';
 import MainButton from '@/components/main-button/MainButton';
+import HotDeals from '@/components/hot-deal/HotDeals';
 
 const HomePage: React.FC = () => {
   return (
@@ -15,6 +15,7 @@ const HomePage: React.FC = () => {
         </MainButton>
       </div>
       <Hero />
+      <HotDeals />
     </div>
   );
 };

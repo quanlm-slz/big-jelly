@@ -1,4 +1,4 @@
-import { MissionLinkInterface } from "@/utils/types";
+import { DealLinkInterface, MissionLinkInterface } from "@/utils/types";
 import { bread, drink, fries, snack } from "./svg";
 
 export const intro = {
@@ -43,3 +43,12 @@ export const missionLinks: MissionLinkInterface[] = [
     label: "Thức Uống",
   },
 ];
+
+export const hotDeals: DealLinkInterface[] = [
+  {
+    id: '1',
+    image: '/',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  }
+]

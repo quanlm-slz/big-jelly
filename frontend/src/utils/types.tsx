@@ -8,3 +8,10 @@ export interface MissionLinkInterface {
   icon: string;
   label: string;
 }
+
+export interface DealLinkInterface {
+  id: string;
+  image: string;
+  title: string;
+  price: string;
+}
