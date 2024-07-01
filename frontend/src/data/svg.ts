@@ -6,3 +6,4 @@ export const snack = "https://www.svgrepo.com/show/109451/snack.svg";
 export const drink =
   "https://www.svgrepo.com/show/417034/drink-glass-healthy.svg";
 export const fries = "https://svgrepo.com/show/208921/french-fries.svg";
+export const award = "https://www.svgrepo.com/show/286420/certificate.svg";
