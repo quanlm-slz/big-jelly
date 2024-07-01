@@ -1,6 +1,6 @@
 .button {
-  @apply mx-auto z-10 border-2 uppercase h-12 w-40 rounded-3xl flex;
+  @apply mx-auto z-10 border-2 uppercase h-12 w-40 rounded-3xl flex cursor-pointer;
   * {
-    @apply m-auto;
+    @apply m-auto cursor-pointer;
   }
 }

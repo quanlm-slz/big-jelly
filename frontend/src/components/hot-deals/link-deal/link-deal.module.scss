@@ -1,0 +1,29 @@
+.container {
+  @apply flex flex-col h-96 w-60 border-2 border-neutral duration-500;
+  &.hover {
+    @apply border-primary shadow-2xl;
+  }
+  *:hover {
+    @apply cursor-pointer;
+  }
+}
+
+.image {
+  @apply relative w-full h-72;
+}
+
+.info {
+  @apply flex flex-col flex-grow mx-4 justify-between;
+  .title {
+    @apply truncate text-center font-medium;
+  }
+  .break {
+    @apply border-t-2 border-b border-primary w-1/3 mx-auto duration-500;
+    &.hover {
+      @apply w-1/2
+    }
+  }
+  .price {
+    @apply text-center text-primary mb-4;
+  }
+}

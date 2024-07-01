@@ -1,0 +1,26 @@
+.container {
+  @apply flex flex-col w-96 h-fit;
+}
+
+.image {
+  @apply relative h-[525px] w-full overflow-clip;
+  & > * {
+    @apply duration-500;
+  }
+  & > .hover {
+    @apply scale-125 opacity-50;
+  }
+}
+
+.titleGroup {
+  @apply flex flex-col gap-2 my-4;
+  .date {
+    @apply text-neutral;
+  }
+  .title {
+    @apply text-primary text-xl font-semibold uppercase truncate tracking-tighter;
+  }
+  .link {
+    @apply text-primary text-lg;
+  }
+}

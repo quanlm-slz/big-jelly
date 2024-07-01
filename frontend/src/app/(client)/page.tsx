@@ -3,7 +3,8 @@ import styles from './home.module.scss'
 import Hero from '@/components/hero/Hero';
 import { mainSlideshow } from '@/data/image';
 import MainButton from '@/components/main-button/MainButton';
-import HotDeals from '@/components/hot-deal/HotDeals';
+import HotDeals from '@/components/hot-deals/HotDeals';
+import HotNews from '@/components/hot-news/HotNews';
 
 const HomePage: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage: React.FC = () => {
       </div>
       <Hero />
       <HotDeals />
+      <HotNews />
     </div>
   );
 };

@@ -3,8 +3,7 @@
 }
 
 .link {
-  @apply mx-4 my-auto tracking-tighter uppercase;
-  transition-duration: 0.5s;
+  @apply mx-4 my-auto tracking-tighter uppercase duration-500;
   &:hover {
     @apply cursor-pointer text-primary;
   }

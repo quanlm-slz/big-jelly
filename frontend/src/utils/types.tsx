@@ -15,3 +15,16 @@ export interface DealLinkInterface {
   title: string;
   price: string;
 }
+
+export interface HotNewsInterface {
+  id: string;
+  date: string;
+  title: string;
+  image: string;
+  author: string;
+  content: string;
+}
+
+export interface CarouselInterface {
+  carouselStyle: string;
+}

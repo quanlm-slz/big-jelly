@@ -1,4 +1,4 @@
-import { DealLinkInterface, MissionLinkInterface } from "@/utils/types";
+import { DealLinkInterface, HotNewsInterface, MissionLinkInterface } from "@/utils/types";
 import { bread, drink, fries, snack } from "./svg";
 
 export const intro = {
@@ -47,8 +47,77 @@ export const missionLinks: MissionLinkInterface[] = [
 export const hotDeals: DealLinkInterface[] = [
   {
     id: '1',
-    image: '/',
+    image: '/products/product-1.webp',
     price: '15.000đ',
     title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '2',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '3',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '4',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '5',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '6',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '7',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+  {
+    id: '8',
+    image: '/products/product-1.webp',
+    price: '15.000đ',
+    title: 'Bánh Mì Lườn Ngỗng Bắc Kinh'
+  },
+]
+
+export const hotNews: HotNewsInterface[] = [
+  {
+    id: '1',
+    title: "Sự trở lại của bánh mì lườn ngỗng Bắc Kinh - Trung Thu này đã có mĩ vị",
+    author: "Trinh MKT",
+    content: "Trung Thu này sẽ đặc biệt hơn bao giờ hết vì Bánh Mì ơi sẽ đưa nhân Lườn Ngỗng Bắc Kinh quay trở lại và lợi hại hơn xưa.",
+    date: "07/09/2023",
+    image: "/news/new-1.webp"
+  },
+  {
+    id: '2',
+    title: "Sự trở lại của bánh mì lườn ngỗng Bắc Kinh - Trung Thu này đã có mĩ vị",
+    author: "Trinh MKT",
+    content: "Trung Thu này sẽ đặc biệt hơn bao giờ hết vì Bánh Mì ơi sẽ đưa nhân Lườn Ngỗng Bắc Kinh quay trở lại và lợi hại hơn xưa.",
+    date: "07/09/2023",
+    image: "/news/new-1.webp"
+  },
+  {
+    id: '3',
+    title: "Sự trở lại của bánh mì lườn ngỗng Bắc Kinh - Trung Thu này đã có mĩ vị",
+    author: "Trinh MKT",
+    content: "Trung Thu này sẽ đặc biệt hơn bao giờ hết vì Bánh Mì ơi sẽ đưa nhân Lườn Ngỗng Bắc Kinh quay trở lại và lợi hại hơn xưa.",
+    date: "07/09/2023",
+    image: "/news/new-1.webp"
   }
 ]

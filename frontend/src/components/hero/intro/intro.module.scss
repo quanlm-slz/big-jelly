@@ -25,8 +25,7 @@
 .buttonGroup {
   @apply flex m-auto;
   .button {
-    @apply bg-primary border-primary text-secondary;
-    transition-duration: 0.5s;
+    @apply bg-primary border-primary text-secondary duration-500;
     &:hover {
       @apply bg-secondary text-primary;
     }

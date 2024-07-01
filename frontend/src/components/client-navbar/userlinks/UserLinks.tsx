@@ -1,6 +1,6 @@
 import { searchSvg, cartSvg } from "@/data/svg";
 import Image from "next/image";
-import styles from "./userlinks.module.css";
+import styles from "./userlinks.module.scss";
 import LoginButton from "./loginbutton/LoginButton";
 
 const UserLinks: React.FC = () => {

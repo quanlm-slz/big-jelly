@@ -6,6 +6,5 @@
 }
 
 .image {
-  @apply bg-primary hover:scale-125;
-  transition-duration: 0.5s;
+  @apply bg-primary hover:scale-125 duration-500;
 }
