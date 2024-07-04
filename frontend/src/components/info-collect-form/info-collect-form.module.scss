@@ -1,0 +1,63 @@
+.backdrop {
+  @apply inset-0 z-40 bg-slate-900/70 fixed;
+}
+.container {
+  @apply inset-0 fixed z-40 flex;
+}
+.panel {
+  background-image: url("../../../public/popup_contact.webp");
+  @apply w-[725px] h-[425px] m-auto z-40 bg-no-repeat bg-center bg-cover rounded flex justify-end relative;
+
+  .closeButton {
+    @apply h-10 w-10 rounded-full absolute right-0 top-0 m-2 flex;
+    * {
+      @apply opacity-50 hover:cursor-pointer hover:opacity-75;
+    }
+  }
+  
+  .formContainer {
+    @apply h-full w-3/5 bg-white/75 py-16 px-10 flex flex-col gap-5;
+  }
+  .formTitle {
+    @apply text-2xl font-semibold;
+  }
+  .formDescription {
+    @apply text-sm;
+    ul {
+      @apply list-disc list-inside mx-4;
+    }
+  }
+  .formGroup {
+    @apply flex flex-col gap-4;
+
+    .input {
+      @apply w-full h-12 px-4 font-semibold;
+    }
+
+    .button {
+      @apply w-full h-12 relative;
+
+      & > div {
+        @apply absolute top-0 left-0 h-12 duration-200 border-primary border hover:cursor-pointer;
+      }
+      .bg {
+        @apply bg-primary w-full;
+      }
+      .bgHover {
+        @apply bg-secondary w-0 ease-linear;
+        &.hover {
+          @apply w-full;
+        }
+      }
+      .text {
+        @apply font-semibold uppercase text-sm text-secondary w-full flex;
+        &.hover {
+          @apply text-primary;
+        }
+        span {
+          @apply m-auto;
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { mainSlideshow } from '@/data/image';
 import MainButton from '@/components/main-button/MainButton';
 import HotDeals from '@/components/hot-deals/HotDeals';
 import HotNews from '@/components/hot-news/HotNews';
+import InfoCollectForm from '@/components/info-collect-form/InfoCollectForm';
 
 const HomePage: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage: React.FC = () => {
       <Hero />
       <HotDeals />
       <HotNews />
+      <InfoCollectForm />
     </div>
   );
 };
