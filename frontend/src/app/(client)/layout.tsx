@@ -1,6 +1,6 @@
-import ClientFooter from "@/components/client-footer/ClientFooter";
-import ClientNavbar from "@/components/client-navbar/ClientNavbar";
 import { PropsWithChildren } from "react";
+import ClientNavbar from "./_components/client-navbar/ClientNavbar";
+import ClientFooter from "./_components/client-footer/ClientFooter";
 
 const HomeLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (

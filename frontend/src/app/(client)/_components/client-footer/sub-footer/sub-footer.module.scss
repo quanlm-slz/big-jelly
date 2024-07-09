@@ -1,0 +1,24 @@
+.container {
+  @apply col-span-2 flex flex-col gap-5;
+  .title {
+    @apply uppercase text-xl font-medium;
+  }
+  .description {
+    @apply brightness-50
+  }
+  .form {
+    @apply flex;
+    .input {
+      @apply text-black p-3 flex-grow rounded-l-full focus:outline-none;
+    }
+    .button {
+      @apply w-32 bg-primary rounded-full -ml-5;
+    }
+  }
+  .icons {
+    @apply flex gap-5;
+    .icon {
+      @apply relative h-6 w-6 fill-white;
+    }
+  }
+}

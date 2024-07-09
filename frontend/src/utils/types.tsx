@@ -28,3 +28,8 @@ export interface HotNewsInterface {
 export interface CarouselInterface {
   carouselStyle: string;
 }
+
+export interface NavlinkInterface {
+  url: string;
+  title: string;
+}

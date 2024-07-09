@@ -9,3 +9,5 @@ export const fries = "https://svgrepo.com/show/208921/french-fries.svg";
 export const award = "https://www.svgrepo.com/show/286420/certificate.svg";
 export const closeButton =
   "https://www.svgrepo.com/show/488118/close-circle.svg";
+export const facebook = "/facebook.svg";
+export const instagram = "/instagram.svg";

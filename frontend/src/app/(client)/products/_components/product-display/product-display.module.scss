@@ -1,0 +1,22 @@
+.container {
+  @apply flex flex-col;
+
+  .title {
+    @apply text-4xl mx-auto uppercase font-bold my-14;
+  }
+  .tabGroup {
+    @apply flex-grow h-96 mx-24 bg-secondary;
+    .tabList {
+      @apply w-full flex border-b-primary border-b-8 h-20;
+      .tab {
+        @apply flex-grow text-neutral font-semibold text-xl data-[hover]:text-primary data-[selected]:bg-primary data-[selected]:text-secondary outline-none;
+      }
+    }
+    .tabContainer  {
+      @apply flex w-full h-96;
+      .cart {
+        @apply flex-grow
+      }
+    }
+  }
+}

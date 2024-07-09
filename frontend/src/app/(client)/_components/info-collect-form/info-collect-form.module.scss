@@ -5,7 +5,7 @@
   @apply inset-0 fixed z-40 flex;
 }
 .panel {
-  background-image: url("../../../public/popup_contact.webp");
+  background-image: url("../../../../../public/popup_contact.webp");
   @apply w-[725px] h-[425px] m-auto z-40 bg-no-repeat bg-center bg-cover rounded flex justify-end relative;
 
   .closeButton {

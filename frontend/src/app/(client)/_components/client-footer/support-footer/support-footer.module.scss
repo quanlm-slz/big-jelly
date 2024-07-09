@@ -1,0 +1,12 @@
+.container {
+  @apply col-span-1;
+  .links {
+    @apply flex flex-col my-6 gap-2;
+    .link {
+      @apply brightness-50 tracking-tight font-medium hover:cursor-pointer hover:text-primary hover:brightness-75;
+    }
+  }
+  .title {
+    @apply uppercase text-xl font-medium;
+  }
+}

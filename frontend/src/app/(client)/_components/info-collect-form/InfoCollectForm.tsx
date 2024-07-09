@@ -5,12 +5,12 @@ import {
   DialogBackdrop,
   DialogPanel,
   Input,
-  Transition,
 } from "@headlessui/react";
-import { useState } from "react";
+import { FormEvent, FormEventHandler, useState } from "react";
 import styles from "./info-collect-form.module.scss";
 import Image from "next/image";
 import { closeButton } from "@/data/svg";
+import { emailSubFormHanlder } from "@/handlers";
 
 const InfoCollectForm = () => {
   const [open, setOpen] = useState(true);
@@ -34,7 +34,7 @@ const InfoCollectForm = () => {
                 <li>Cách thưởng thức, chế biến Big belly tại nhà</li>
               </ul>
             </div>
-            <form className={styles.formGroup}>
+            <form className={styles.formGroup} onSubmit={emailSubFormHanlder}>
               <Input
                 className={styles.input}
                 placeholder="Nhập email của bạn"
