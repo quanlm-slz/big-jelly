@@ -1,3 +1,33 @@
 .container {
-  @apply flex-grow-[3];
+  @apply col-span-3 grid grid-cols-4 gap-5;
+  * {
+    @apply cursor-pointer;
+  }
+
+  .product {
+    @apply flex flex-col h-[425px] w-full mx-auto shadow-md;
+    .image {
+      @apply w-full h-80 relative;
+    }
+    .title {
+      @apply mx-3 my-2 font-semibold text-lg hover:text-primary duration-300 transition-colors truncate;
+    }
+    .addToCart {
+      @apply mx-3 flex flex-grow justify-between;
+      .price {
+        @apply font-bold flex;
+        span {
+          @apply my-auto; 
+        }
+      }
+      .discount {
+      }
+      .button {
+        @apply flex h-fit my-auto;
+        button {
+          @apply border-primary border-2 text-primary font-semibold bg-secondary px-4 py-1 rounded-full hover:bg-primary hover:text-secondary duration-300 transition-colors;
+        }
+      }
+    }
+  }
 }
