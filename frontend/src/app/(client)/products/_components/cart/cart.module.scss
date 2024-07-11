@@ -1,0 +1,45 @@
+.container {
+  @apply bg-gray-100 flex flex-col border-gray-100 border-l border-r h-fit shadow sticky top-24;
+  .titleGroup {
+    @apply flex justify-between h-12 px-2; 
+    .title {
+      @apply flex font-bold my-auto;
+    }
+    .icon {
+      @apply relative w-6 h-6 my-auto;
+    }
+  }
+  .orderList {
+    @apply flex flex-col bg-secondary min-h-16;
+    .noOrder {
+      @apply m-auto;
+    }
+  }
+  .totalGroup {
+    @apply flex justify-between h-12 px-2;
+    .title {
+      @apply flex my-auto;
+    }
+    .total {
+      @apply flex my-auto text-primary font-bold text-lg;
+    }
+  }
+  .receiver {
+    @apply h-10 flex justify-between bg-secondary px-2;
+    .title {
+      @apply flex my-auto font-bold;        
+    }
+    .checkbox {
+      @apply w-5;
+    }
+  }
+  .note {
+    @apply bg-gray-100 outline-none px-2 py-5 font-semibold text-neutral hover:cursor-text;
+  }
+  .button {
+    @apply bg-secondary py-2;
+    button {
+      @apply bg-primary w-full py-2 text-secondary uppercase font-medium hover:cursor-pointer;
+    }
+  }
+}

@@ -8,7 +8,7 @@ const ProductPanel: React.FC<{ products: DealLinkInterface[] }> = ({
   return (
     <div className={styles.container}>
       {products.map((product) => (
-        <div className={styles.product}>
+        <div className={styles.product} key={product.title}>
           <div className={styles.image}>
             <Image src={product.image} fill alt={product.title} />
           </div>

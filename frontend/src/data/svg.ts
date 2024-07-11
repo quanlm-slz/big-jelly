@@ -1,5 +1,5 @@
 export const searchSvg = "https://www.svgrepo.com/show/532555/search.svg";
-export const cartSvg =
+export const basketSvg =
   "https://www.svgrepo.com/show/260132/shopping-basket-shopper.svg";
 export const bread = "https://www.svgrepo.com/show/129162/bread.svg";
 export const snack = "https://www.svgrepo.com/show/109451/snack.svg";
@@ -11,3 +11,4 @@ export const closeButton =
   "https://www.svgrepo.com/show/488118/close-circle.svg";
 export const facebook = "/facebook.svg";
 export const instagram = "/instagram.svg";
+export const cartSvg = "https://www.svgrepo.com/show/533043/cart-shopping.svg";

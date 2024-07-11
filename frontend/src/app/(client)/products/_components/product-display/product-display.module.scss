@@ -13,10 +13,19 @@
       }
     }
     .tabContainer  {
-      @apply grid grid-cols-4 w-full my-8;
+      @apply grid grid-cols-4 gap-8 w-full mt-10;
       .cart {
         @apply col-span-1;
       }
+    }
+  }
+  .contact {
+    @apply flex flex-col bg-primary text-secondary text-3xl py-6 my-10;
+    .message {
+      @apply mx-auto my-3 font-medium;
+    }
+    .number {
+      @apply mx-auto my-3 font-bold;
     }
   }
 }

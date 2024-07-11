@@ -4,6 +4,7 @@ import { filterTabs } from "@/data/constants";
 import { Fragment } from "react";
 import ProductPanel from "./ProductPanel/ProductPanel";
 import { products } from "@/data/data";
+import Cart from "../cart/Cart";
 
 const ProductDisplay: React.FC = () => {
   return (
@@ -23,9 +24,13 @@ const ProductDisplay: React.FC = () => {
               <ProductPanel products={products} />
             </TabPanel>
           ))}
-          <div className={styles.cart} />
+          <Cart />
         </TabPanels>
       </TabGroup>
+      <div className={styles.contact}>
+        <div className={styles.message}>Đặt tại web hoặc liên hệ</div>
+        <div className={styles.number}>0903 793 625</div>
+      </div>
     </div>
   );
 };
