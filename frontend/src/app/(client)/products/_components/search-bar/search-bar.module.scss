@@ -3,7 +3,7 @@
   .search {
     @apply h-12 w-[725px] mx-auto flex;
     .input {
-      @apply h-12 w-[725px] bg-secondary mx-auto rounded-full flex-grow px-5;
+      @apply h-12 w-[725px] bg-secondary mx-auto rounded-full flex-grow px-5 hover:cursor-text;
     }
     .icon {
       @apply relative h-6 w-6 -ml-10 my-auto;

@@ -14,6 +14,9 @@
     }
     .tabContainer  {
       @apply grid grid-cols-4 gap-8 w-full mt-10;
+      .productsContainer {
+        @apply flex flex-col w-full col-span-3 ;
+      }
       .cart {
         @apply col-span-1;
       }

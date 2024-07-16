@@ -37,6 +37,7 @@ const InfoCollectForm = () => {
             <form className={styles.formGroup} onSubmit={emailSubFormHanlder}>
               <Input
                 className={styles.input}
+                name="email"
                 placeholder="Nhập email của bạn"
               />
               <button

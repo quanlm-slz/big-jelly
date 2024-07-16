@@ -181,4 +181,35 @@ export const products: DealLinkInterface[] = [
     price: "15.000đ",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
+  {
+    id: "9",
+    image: "/products/product-1.webp",
+    price: "15.000đ",
+    title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
+  },
+  {
+    id: "10",
+    image: "/products/product-1.webp",
+    price: "15.000đ",
+    title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
+  },
+  {
+    id: "11",
+    image: "/products/product-1.webp",
+    price: "15.000đ",
+    title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
+  },
+  {
+    id: "12",
+    image: "/products/product-1.webp",
+    price: "15.000đ",
+    promoted_price: "12.000đ",
+    title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
+  },
+  {
+    id: "13",
+    image: "/products/product-1.webp",
+    price: "15.000đ",
+    title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
+  },
 ];

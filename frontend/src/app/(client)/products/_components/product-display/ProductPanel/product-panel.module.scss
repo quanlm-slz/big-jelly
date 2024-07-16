@@ -1,5 +1,5 @@
 .container {
-  @apply col-span-3 grid grid-cols-4 gap-5;
+  @apply grid grid-cols-4 gap-5;
   * {
     @apply cursor-pointer;
   }
@@ -15,12 +15,16 @@
     .addToCart {
       @apply mx-3 flex flex-grow justify-between;
       .price {
-        @apply font-bold flex;
+        @apply font-bold flex tracking-tight;
         span {
           @apply my-auto; 
         }
       }
-      .discount {
+      .original {
+        @apply text-sm font-bold flex line-through text-neutral bg-none brightness-150 tracking-tight;
+        span {
+          @apply my-auto
+        }
       }
       .button {
         @apply flex h-fit my-auto;

@@ -1,4 +1,4 @@
-import { NavlinkInterface } from "@/utils/types";
+import { FilterTabInterface, NavlinkInterface } from "@/utils/types";
 
 export const navlinks: NavlinkInterface[] = [
   { url: "/", title: "Trang chủ" },
@@ -9,9 +9,21 @@ export const navlinks: NavlinkInterface[] = [
   { url: "/contacts", title: "Thông tin liên hệ" },
 ]
 
-export const filterTabs: string[] = [
-  "Tất cả",
-  "Ưu đãi",
-  "Bánh mì ơi",
-  "Thức uống"
+export const filterTabs: FilterTabInterface[] = [
+  {
+    label: "Tất cả",
+    value: "",
+  },
+  {
+    label: "Ưu đãi",
+    value: "promotion"
+  },
+  {
+    label: "Bánh mì ơi",
+    value: "special"
+  },
+  {
+    label: "Thức uống",
+    value: "drinks"
+  }
 ]

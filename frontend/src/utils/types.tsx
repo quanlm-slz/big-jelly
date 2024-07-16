@@ -14,6 +14,7 @@ export interface DealLinkInterface {
   image: string;
   title: string;
   price: string;
+  promoted_price?: string;
 }
 
 export interface HotNewsInterface {
@@ -32,4 +33,14 @@ export interface CarouselInterface {
 export interface NavlinkInterface {
   url: string;
   title: string;
+}
+
+export interface FilterTabInterface {
+  label: string;
+  value: string;
+}
+
+export interface ProductFilterInterface {
+  filter?: string;
+  search?: string;
 }

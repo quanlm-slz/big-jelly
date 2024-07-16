@@ -7,8 +7,8 @@ const NavLinks: React.FC = () => {
   const pathname = usePathname();
   return (
     <div className={styles.links}>
-      { navlinks.map(({url, title}) => (
-        <Link key={title} href={url} className={`${styles.link} ${pathname===url && 'text-primary'}`}>{title}</Link>
+      { navlinks.map(({url, title}, index) => (
+        <Link key={index} href={url} className={`${styles.link} ${pathname===url && 'text-primary'}`}>{title}</Link>
       ))}
     </div>
   );

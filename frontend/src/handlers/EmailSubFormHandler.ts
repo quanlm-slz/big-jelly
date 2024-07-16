@@ -1,13 +1,11 @@
+import { postEmail } from "@/queries/emailRequests";
 import { FormEventHandler } from "react";
 
 const handler: FormEventHandler<HTMLFormElement> = async (event) => {
   event.preventDefault();
 
   const formData = new FormData(event.currentTarget);
-  await fetch("/api/email", {
-    method: "POST",
-    body: formData,
-  });
+  await postEmail(formData);
 };
 
 export default handler;
