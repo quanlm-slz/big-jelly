@@ -6,7 +6,7 @@ import {
   DialogPanel,
   Input,
 } from "@headlessui/react";
-import { FormEvent, FormEventHandler, useState } from "react";
+import { FormEvent, FormEventHandler, useEffect, useState } from "react";
 import styles from "./info-collect-form.module.scss";
 import Image from "next/image";
 import { closeButton } from "@/data/svg";
@@ -15,13 +15,18 @@ import { emailSubFormHanlder } from "@/handlers";
 const InfoCollectForm = () => {
   const [open, setOpen] = useState(true);
   const [hoverSubmit, setHoverSubmit] = useState(false);
+  
+  const handleExit = () => {
+    setOpen(false);
+    localStorage.setItem('visited', 'true');
+  }
 
   return (
     <Dialog open={open} onClose={() => setOpen(false)}>
       <DialogBackdrop className={styles.backdrop} />
       <div className={styles.container}>
         <DialogPanel className={styles.panel}>
-          <div className={styles.closeButton} onClick={() => setOpen(false)}>
+          <div className={styles.closeButton} onClick={handleExit}>
             <Image src={closeButton} alt="close" fill />
           </div>
           <div className={styles.formContainer}>

@@ -1,9 +1,12 @@
 .container {
   @apply h-[28px] w-[28px] flex flex-col justify-evenly hover:cursor-pointer;
+  * {
+    @apply hover:cursor-pointer;
+  }
 }
 
 .line {
-  transition: transform 2s, opacity 2s;
+  transition: transform .2s, opacity .4s;
   @apply w-[28px] h-[2px] m-auto rounded-sm bg-primary;
 }
 
