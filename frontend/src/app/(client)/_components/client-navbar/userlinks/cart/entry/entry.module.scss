@@ -1,0 +1,24 @@
+.container {
+  @apply flex py-5 border border-gray-200 relative;
+  .image {
+    @apply relative w-20 h-28 mx-2 shrink-0;
+  }
+  .info {
+    @apply shrink flex-grow mr-5 flex flex-col gap-0.5;
+    .product {
+      @apply font-semibold text-sm;
+    }
+    .price {
+      @apply text-xs;
+    }
+    .amount {
+      @apply text-xs;
+    }
+  }
+  .closeButton {
+    @apply absolute top-2 right-2 h-6 w-6;
+    & > * {
+      @apply hover:cursor-pointer;
+    }
+  }
+}

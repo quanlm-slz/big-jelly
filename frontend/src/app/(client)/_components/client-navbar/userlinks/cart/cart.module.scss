@@ -1,0 +1,39 @@
+.container {
+  @apply relative h-fit w-fit;
+  .btnGroup {
+    @apply relative h-6 w-6;
+    .cover {
+      @apply h-6 w-6 z-10 bg-opacity-0 absolute hover:cursor-pointer;
+    }
+    .basket {
+      @apply focus:outline-none absolute z-10 h-6 w-6;
+      span {
+        @apply absolute -right-3 -top-3 h-5 w-5 py-[2px] text-center rounded-full bg-primary text-xs text-secondary;
+      }
+    }
+  }
+}
+.cartPanel {
+  @apply z-50 border-slate-200 border bg-secondary w-80 flex flex-col;
+  & > * {
+    @apply px-2;
+  }
+  .summary {
+    @apply border-slate-200 border h-12 text-xs flex;
+    span {
+      @apply my-auto
+    }
+  }
+  .btnGroup {
+    @apply py-6 grid gap-2 grid-cols-2 text-secondary text-xs;
+    span {
+      @apply m-auto;
+    }
+    .cartBtn {
+      @apply bg-primary h-10;
+    }
+    .payBtn {
+      @apply bg-black h-10;
+    }
+  }
+}

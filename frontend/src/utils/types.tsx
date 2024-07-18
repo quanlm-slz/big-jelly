@@ -1,3 +1,5 @@
+import { Moment } from "moment";
+
 export interface MainButtonInterface {
   url: string;
   buttonStyle?: string;
@@ -9,12 +11,12 @@ export interface MissionLinkInterface {
   label: string;
 }
 
-export interface DealLinkInterface {
+export interface ProductInterface {
   id: string;
   image: string;
   title: string;
-  price: string;
-  promoted_price?: string;
+  price: number;
+  promoted_price?: number;
 }
 
 export interface HotNewsInterface {
@@ -43,4 +45,14 @@ export interface FilterTabInterface {
 export interface ProductFilterInterface {
   filter?: string;
   search?: string;
+}
+
+export interface CartEntry {
+  product: ProductInterface;
+  amount: number;
+}
+
+export interface LocalStorageEntry {
+  value: any;
+  expiration: Moment;
 }

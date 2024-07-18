@@ -1,5 +1,5 @@
 import {
-  DealLinkInterface,
+  ProductInterface,
   HotNewsInterface,
   MissionLinkInterface,
 } from "@/utils/types";
@@ -48,53 +48,53 @@ export const missionLinks: MissionLinkInterface[] = [
   },
 ];
 
-export const hotDeals: DealLinkInterface[] = [
+export const hotDeals: ProductInterface[] = [
   {
     id: "1",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "2",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "3",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "4",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "5",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "6",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "7",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "8",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
 ];
@@ -132,84 +132,84 @@ export const hotNews: HotNewsInterface[] = [
   },
 ];
 
-export const products: DealLinkInterface[] = [
+export const products: ProductInterface[] = [
   {
     id: "1",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "2",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "3",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "4",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "5",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "6",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "7",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "8",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "9",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "10",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "11",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "12",
     image: "/products/product-1.webp",
-    price: "15.000đ",
-    promoted_price: "12.000đ",
+    price: 15000,
+    promoted_price: 12000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "13",
     image: "/products/product-1.webp",
-    price: "15.000đ",
+    price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
 ];

@@ -11,14 +11,18 @@ import styles from "./info-collect-form.module.scss";
 import Image from "next/image";
 import { closeButton } from "@/data/svg";
 import { emailSubFormHanlder } from "@/handlers";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/lib/store";
+import { setVisited } from "@/lib/features/appSlice";
 
 const InfoCollectForm = () => {
   const [open, setOpen] = useState(true);
   const [hoverSubmit, setHoverSubmit] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
   
   const handleExit = () => {
     setOpen(false);
-    localStorage.setItem('visited', 'true');
+    dispatch(setVisited());
   }
 
   return (

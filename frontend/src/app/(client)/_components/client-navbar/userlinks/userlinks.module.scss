@@ -1,5 +1,11 @@
 .container {
   @apply flex my-auto flex-grow justify-end gap-4;
+  .basket {
+    @apply relative;
+    span {
+      @apply absolute -right-3 -top-3 h-5 w-5 py-[2px] text-center rounded-full bg-primary text-xs text-secondary;
+    }
+  }
 }
 
 .icon {

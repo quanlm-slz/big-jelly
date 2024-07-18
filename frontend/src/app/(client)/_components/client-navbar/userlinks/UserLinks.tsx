@@ -1,7 +1,8 @@
-import { searchSvg, basketSvg } from "@/data/svg";
+import { searchSvg } from "@/data/svg";
 import Image from "next/image";
 import styles from "./userlinks.module.scss";
 import LoginButton from "./loginbutton/LoginButton";
+import Cart from "./cart/Cart";
 
 const UserLinks: React.FC = () => {
   return (
@@ -10,16 +11,10 @@ const UserLinks: React.FC = () => {
         className={styles.icon}
         src={searchSvg}
         alt="search"
-        width="20"
-        height="20"
+        width="24"
+        height="24"
       />
-      <Image
-        className={styles.icon}
-        src={basketSvg}
-        alt="cart"
-        width="20"
-        height="20"
-      />
+      <Cart />
       <LoginButton />
     </div>
   );

@@ -1,13 +1,23 @@
-import { DealLinkInterface } from "@/utils/types";
+import { ProductInterface } from "@/utils/types";
 import styles from "./product-panel.module.scss";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/lib/store";
+import { addToCart } from "@/lib/features/cartSlice";
+import { renderPrice } from "@/lib/functions";
 
-const ProductPanel: React.FC<{ products: DealLinkInterface[] }> = ({
+const ProductPanel: React.FC<{ products: ProductInterface[] }> = ({
   products,
 }) => {
-  const isPromoted = (product: DealLinkInterface) => {
-    return product.promoted_price
-  }
+  const dispatch = useDispatch<AppDispatch>();
+
+  const isPromoted = (product: ProductInterface) => {
+    return product.promoted_price;
+  };
+  const handleOrder = (product: ProductInterface) => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div className={styles.container}>
       {products.map((product, index) => (
@@ -19,14 +29,21 @@ const ProductPanel: React.FC<{ products: DealLinkInterface[] }> = ({
           <div className={styles.addToCart}>
             {isPromoted(product) && (
               <div className={styles.price}>
-                <span>{product.promoted_price}</span>
+                <span>{renderPrice(product.promoted_price || 0)}</span>
               </div>
             )}
-            <div className={isPromoted(product) ? styles.original : styles.price}>
-              <span>{product.price}</span>
+            <div
+              className={isPromoted(product) ? styles.original : styles.price}
+            >
+              <span>{renderPrice(product.price)}</span>
             </div>
             <div className={styles.button}>
-              <button className={styles.button}>Đặt món</button>
+              <button
+                className={styles.button}
+                onClick={() => handleOrder(product)}
+              >
+                Đặt món
+              </button>
             </div>
           </div>
         </div>

@@ -7,6 +7,6 @@
     @apply h-[3475px] w-lvw mr-1 overflow-x-clip flex flex-col
   }
   * {
-    @apply cursor-default;
+    @apply cursor-default shrink-0;
   }
 }

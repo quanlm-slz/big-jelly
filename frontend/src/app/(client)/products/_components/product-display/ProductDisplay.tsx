@@ -5,13 +5,13 @@ import styles from "./product-display.module.scss";
 import { filterTabs } from "@/data/constants";
 import ProductPanel from "./ProductPanel/ProductPanel";
 import Cart from "../cart/Cart";
-import { DealLinkInterface } from "@/utils/types";
+import { ProductInterface } from "@/utils/types";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ExpandButton from "./ExpandButton/ExpandButton";
 
 const ProductDisplay: React.FC<{
-  data: DealLinkInterface[];
+  data: ProductInterface[];
   activeFilter: string;
 }> = ({ data, activeFilter }) => {
   const router = useRouter();

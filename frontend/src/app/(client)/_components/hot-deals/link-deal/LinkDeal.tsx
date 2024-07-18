@@ -1,11 +1,12 @@
 "use client";
 
-import { CarouselInterface, DealLinkInterface } from "@/utils/types";
+import { CarouselInterface, ProductInterface } from "@/utils/types";
 import styles from "./link-deal.module.scss";
 import Image from "next/image";
 import { useState } from "react";
+import { renderPrice } from "@/lib/functions";
 
-const LinkDeal: React.FC<DealLinkInterface & CarouselInterface> = ({ title, image, price, carouselStyle }) => {
+const LinkDeal: React.FC<ProductInterface & CarouselInterface> = ({ title, image, price, carouselStyle }) => {
   const [hover, setHover] = useState<boolean>(false);
   return (
     <div
@@ -20,7 +21,7 @@ const LinkDeal: React.FC<DealLinkInterface & CarouselInterface> = ({ title, imag
       <div className={styles.info}>
         <div className={styles.title}>{title}</div>
         <div className={`${styles.break} ${hover && styles.hover}`} />
-        <div className={styles.price}>{price}</div>
+        <div className={styles.price}>{renderPrice(price)}</div>
       </div>
     </div>
   );
