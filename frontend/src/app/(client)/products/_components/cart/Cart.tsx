@@ -1,10 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./cart.module.scss";
 import { cartSvg } from "@/data/svg";
+import { useAppSelector } from "@/lib/hooks";
+import { CartEntry } from "@/utils/types";
+import Entry from "./entry/Entry";
+import { useRouter } from "next/navigation";
 
 const Cart: React.FC = () => {
+  const router = useRouter();
+  const cart = useAppSelector((state) => state.cart.orders) as CartEntry[];
   return (
-    <form className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.titleGroup}>
         <div className={styles.title}>Giỏ hàng</div>
         <div className={styles.icon}>
@@ -12,7 +20,11 @@ const Cart: React.FC = () => {
         </div>
       </div>
       <div className={styles.orderList}>
-        <div className={styles.noOrder}>Bạn chưa chọn món nào</div>
+        {cart.length <= 0 ? (
+          <div className={styles.noOrder}>Bạn chưa chọn món nào</div>
+        ) : (
+          cart.map((entry, index) => <Entry key={index} entry={entry} />)
+        )}
       </div>
       <div className={styles.totalGroup}>
         <div className={styles.title}>Tổng cộng</div>
@@ -24,9 +36,11 @@ const Cart: React.FC = () => {
       </div>
       <textarea className={styles.note} placeholder="Ghi chú" rows={3} />
       <div className={styles.button}>
-        <button type="submit">Đã ngưng nhận hàng hôm nay</button>
+        <button type="button" onClick={() => router.push("/checkouts")}>
+          Thanh toán
+        </button>
       </div>
-    </form>
+    </div>
   );
 };
 

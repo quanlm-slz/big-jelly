@@ -1,13 +1,12 @@
 "use client";
 
-import { RootState } from "@/lib/store";
 import { Hero, HotDeals, HotNews, InfoCollectForm } from "./_components";
 import styles from "./home.module.scss";
 import { Slideshow } from "@/components";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/lib/hooks";
 
 const HomePage: React.FC = () => {
-  const firstVisit = useSelector<RootState>((state) => state.app.firstVisit);
+  const firstVisit = useAppSelector((state) => state.app.firstVisit);
   return (
     <div className={styles.container}>
       <Slideshow withButton />

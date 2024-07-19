@@ -1,15 +1,14 @@
 import { ProductInterface } from "@/utils/types";
 import styles from "./product-panel.module.scss";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/lib/store";
 import { addToCart } from "@/lib/features/cartSlice";
 import { renderPrice } from "@/lib/functions";
+import { useAppDispatch } from "@/lib/hooks";
 
 const ProductPanel: React.FC<{ products: ProductInterface[] }> = ({
   products,
 }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const isPromoted = (product: ProductInterface) => {
     return product.promoted_price;

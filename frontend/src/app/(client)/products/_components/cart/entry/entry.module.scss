@@ -1,0 +1,33 @@
+.container {
+  @apply grid grid-cols-3 py-4 px-2 border border-gray-200;
+  .info {
+    @apply flex flex-col col-span-2 h-28 justify-between;
+    .titleGroup {
+      @apply flex flex-col gap-1;
+      .title {
+        @apply font-semibold;
+      }
+      .note {
+        @apply text-neutral brightness-200 text-sm;
+      }
+    }
+    .price {
+      @apply text-end
+    }
+  }
+  .quantityGroup {
+    @apply flex m-auto h-6 gap-3;
+    .button {
+      @apply relative w-6;
+      & > * {
+        @apply hover:cursor-pointer
+      }
+    }
+    .quantity {
+      @apply flex;
+      * {
+        @apply m-auto;
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ export interface ProductInterface {
   title: string;
   price: number;
   promoted_price?: number;
+  note?: string;
 }
 
 export interface HotNewsInterface {
@@ -55,4 +56,9 @@ export interface CartEntry {
 export interface LocalStorageEntry {
   value: any;
   expiration: Moment;
+}
+
+export interface selectOptions {
+  id: number
+  label: string;
 }

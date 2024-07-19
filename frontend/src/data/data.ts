@@ -137,65 +137,76 @@ export const products: ProductInterface[] = [
     id: "1",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "2",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "3",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "4",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "5",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "6",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "7",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "8",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "9",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "10",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
   {
     id: "11",
     image: "/products/product-1.webp",
+    note: "Phần 1 ổ/Không thêm món",
     price: 15000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
@@ -203,6 +214,7 @@ export const products: ProductInterface[] = [
     id: "12",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     promoted_price: 12000,
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
@@ -210,6 +222,48 @@ export const products: ProductInterface[] = [
     id: "13",
     image: "/products/product-1.webp",
     price: 15000,
+    note: "Phần 1 ổ/Không thêm món",
     title: "Bánh Mì Lườn Ngỗng Bắc Kinh",
   },
 ];
+
+export const cities = [
+  {
+    id: 1,
+    label: "Hồ Chí Minh",
+  },
+  {
+    id: 2,
+    label: "Hà Nội",
+  },
+]
+
+export const districts = [
+  {
+    id: 1,
+    label: "Bình Thạnh"
+  },
+  {
+    id: 2,
+    label: "Tân Bình"
+  },
+  {
+    id: 3,
+    label: "Thủ Đức"
+  }
+]
+
+export const communes = [
+  {
+    id: 1,
+    label: "Hiệp Bình Chánh",
+  },
+  {
+    id: 2,
+    label: "Linh Trung",
+  },
+  {
+    id: 3,
+    label: "Linh Đông",
+  }
+]

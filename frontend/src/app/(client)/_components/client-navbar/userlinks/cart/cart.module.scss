@@ -31,9 +31,15 @@
     }
     .cartBtn {
       @apply bg-primary h-10;
+      & > * {
+        @apply hover:cursor-pointer;
+      }
     }
     .payBtn {
       @apply bg-black h-10;
+      & > * {
+        @apply hover:cursor-pointer;
+      }
     }
   }
 }

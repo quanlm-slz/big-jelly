@@ -1,29 +1,23 @@
 "use client";
 
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  Input,
-} from "@headlessui/react";
-import { FormEvent, FormEventHandler, useEffect, useState } from "react";
+import { Dialog, DialogBackdrop, DialogPanel, Input } from "@headlessui/react";
+import { useState } from "react";
 import styles from "./info-collect-form.module.scss";
 import Image from "next/image";
 import { closeButton } from "@/data/svg";
 import { emailSubFormHanlder } from "@/handlers";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/lib/store";
 import { setVisited } from "@/lib/features/appSlice";
+import { useAppDispatch } from "@/lib/hooks";
 
 const InfoCollectForm = () => {
   const [open, setOpen] = useState(true);
   const [hoverSubmit, setHoverSubmit] = useState(false);
-  const dispatch = useDispatch<AppDispatch>();
-  
+  const dispatch = useAppDispatch();
+
   const handleExit = () => {
     setOpen(false);
     dispatch(setVisited());
-  }
+  };
 
   return (
     <Dialog open={open} onClose={() => setOpen(false)}>

@@ -1,0 +1,29 @@
+.container {
+  @apply grid grid-cols-3 grid-rows-4 gap-4;
+  input {
+    @apply h-8 border border-gray-200 rounded-md px-2;
+  }
+  .name {
+    @apply col-span-3;
+  }
+  .email {
+    @apply col-span-2;
+  }
+  .phoneNumber {}
+  .address {
+    @apply col-span-3;
+  }
+  .dropdown {
+    @apply h-8 overflow-visible border border-gray-200;
+    .button {
+      @apply flex justify-between border border-gray-200 h-8 w-full;
+      span {
+        @apply my-auto mx-2;
+      }
+      .icon {
+        @apply relative h-5 w-5 my-auto bg-opacity-0;
+      }
+    }
+  }
+}
+

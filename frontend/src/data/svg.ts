@@ -12,3 +12,8 @@ export const closeButton =
 export const facebook = "/facebook.svg";
 export const instagram = "/instagram.svg";
 export const cartSvg = "https://www.svgrepo.com/show/533043/cart-shopping.svg";
+export const plusCircle = "https://www.svgrepo.com/show/522230/plus-circle.svg";
+export const minusCircle =
+  "https://www.svgrepo.com/show/522183/minus-circle.svg";
+export const dropdown =
+  "https://www.svgrepo.com/show/509905/dropdown-arrow.svg";
