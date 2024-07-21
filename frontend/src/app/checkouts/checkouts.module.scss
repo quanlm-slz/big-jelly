@@ -1,0 +1,27 @@
+.container {
+  @apply grid grid-cols-5 mx-44 border-gray-200;
+  .info {
+    @apply flex flex-col gap-4 border-r col-span-3 px-20 py-16;
+    .brand {
+      @apply text-3xl;
+    }
+    .steps {
+      @apply flex gap-3 justify-start text-xs;
+      .cart {
+        @apply hover:cursor-pointer text-blue-400;
+      }
+    }
+    .title {
+      @apply text-xl;
+    }
+    .login {
+      @apply text-gray-500;
+      a {
+        @apply text-blue-400;
+      }
+    }
+  }
+  .summary {
+    @apply border-l col-span-2 px-20;
+  }
+}

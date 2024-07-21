@@ -17,3 +17,4 @@ export const minusCircle =
   "https://www.svgrepo.com/show/522183/minus-circle.svg";
 export const dropdown =
   "https://www.svgrepo.com/show/509905/dropdown-arrow.svg";
+export const shipping = "https://www.svgrepo.com/show/520563/box-check.svg";
