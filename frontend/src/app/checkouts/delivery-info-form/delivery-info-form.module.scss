@@ -17,12 +17,40 @@
     .dropdown {
       @apply h-10 overflow-visible border border-gray-200 flex;
       .input {
-        @apply w-full py-1 appearance-none;
+        @apply w-full py-1 px-2 appearance-none;
       }
       .icon {
         @apply relative h-5 w-9 px-2 my-auto -ml-9 bg-opacity-0 border-l border-gray-200 pointer-events-none;
       }
     }
   }
+  .deliveryInfo {
+    .summary {
+      @apply text-xl tracking-tight leading-6 py-5;
+    }
+    .time {
+      @apply leading-5;
+    }
+  }
+  .checkboxContainer {
+    @apply my-5;
+    .deliveryPrice {
+      @apply flex justify-between;
+    }
+  }
+  .paymentInfo {
+    @apply flex flex-col;
+    .title {
+      @apply text-xl my-5;
+    }
+  }
+  .buttonGroup {
+    @apply flex justify-between my-6;
+    .link {
+      @apply text-blue-400 my-auto text-sm;
+    }
+    .submit {
+      @apply bg-blue-600 text-secondary p-4 rounded-lg;
+    }
+  }
 }
-

@@ -1,0 +1,15 @@
+.checkboxContainer {
+  @apply flex flex-col my-5;
+  .container {
+    @apply flex gap-3 border border-gray-400 p-4;
+    .label {
+      @apply flex-grow flex justify-between my-auto;
+    }
+    .radio {
+      @apply border border-gray-400 size-5 rounded-full data-[checked]:bg-blue-400 flex;
+      .inner {
+        @apply m-auto size-2 bg-secondary rounded-full;
+      }
+    }
+  }
+}

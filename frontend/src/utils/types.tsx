@@ -62,3 +62,17 @@ export interface selectOptions {
   id: number
   label: string;
 }
+
+export interface DeliveryMethod {
+  id: number;
+  label: string;
+  price: number;
+}
+
+export interface PaymentMethod {
+  id: number;
+  label: string;
+  icon: string;
+  desc?: string;
+  note?: string;
+}

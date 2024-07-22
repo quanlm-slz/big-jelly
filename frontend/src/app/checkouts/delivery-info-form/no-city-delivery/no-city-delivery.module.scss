@@ -1,7 +1,10 @@
 .container {
-  @apply border border-gray-300 rounded-md flex flex-col justify-center;
+  @apply border border-gray-300 rounded-md flex flex-col justify-center my-5 h-56;
   .icon {
-    @apply relative h-20 w-48 mx-auto;
+    @apply relative h-32 w-52 mx-auto;
+    img {
+      @apply object-fill scale-x-110;
+    }
   }
   .notice {
     @apply mx-auto text-gray-400;

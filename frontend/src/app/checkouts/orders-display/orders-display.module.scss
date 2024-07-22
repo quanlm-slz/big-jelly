@@ -1,0 +1,33 @@
+.container {
+  @apply flex flex-col gap-4;
+  .entry {
+    @apply flex gap-4;
+    .img {
+      @apply relative size-20 rounded border border-gray-400;
+      img {
+        @apply px-2
+      }
+      .amount {
+        @apply absolute bg-gray-400 text-secondary size-6 -right-3 -top-3 rounded-full flex;
+        & > span {
+          @apply m-auto text-sm;
+        }
+      }
+    }
+    .textGroup {
+      @apply flex-grow my-auto;
+      .title {
+        @apply font-medium;
+      }
+      .note {
+        @apply text-sm text-gray-400;
+      }
+    }
+    .price {
+      @apply text-sm font-medium flex;
+      & > span {
+        @apply my-auto;
+      }
+    }
+  }
+}

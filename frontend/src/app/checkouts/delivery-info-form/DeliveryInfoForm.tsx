@@ -1,18 +1,30 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./delivery-info-form.module.scss";
 import { cities, communes, districts } from "@/data/data";
 import NoCityDelivery from "./no-city-delivery/NoCityDelivery";
 import { dropdown } from "@/data/svg";
 import Image from "next/image";
-import { useRef } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import DeliveryCheckbox from "./delivery-checkbox/DeliveryCheckbox";
+import PaymentCheckbox from "./payment-checkbox/PaymentCheckbox";
+import Link from "next/link";
 
 const DeliveryInfoForm: React.FC = () => {
   const router = useRouter();
+  const params = useSearchParams();
   const city = useRef<HTMLSelectElement>(null);
   const district = useRef<HTMLSelectElement>(null);
   const commune = useRef<HTMLSelectElement>(null);
+  const [disabledDelivery, setDisableDelivery] = useState<Boolean>(true);
+
+  useEffect(() => {
+    const disabled =
+      Number(city?.current?.value) == -1 ||
+      Number(district?.current?.value) == -1;
+    setDisableDelivery(disabled);
+  }, [city?.current?.value, district?.current?.value]);
 
   const addParams = (param: string, value: string) => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -27,13 +39,31 @@ const DeliveryInfoForm: React.FC = () => {
       router.push(window.location.pathname, { scroll: false });
     }
   };
+
+  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    console.log(formData.get("paymentMethod"));
+  };
   return (
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={submitHandler}>
       <div className={styles.personalInfo}>
-        <input type="text" placeholder="Họ và tên" className={styles.name} />
-        <input type="text" placeholder="Email" className={styles.email} />
         <input
           type="text"
+          name="name"
+          placeholder="Họ và tên"
+          className={styles.name}
+        />
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          className={styles.email}
+        />
+        <input
+          type="text"
+          name="phone"
           placeholder="Số điện thoại"
           className={styles.phoneNumber}
         />
@@ -43,6 +73,7 @@ const DeliveryInfoForm: React.FC = () => {
             ref={city}
             name="city"
             className={styles.input}
+            defaultValue={params.get("city") || "-1"}
             onChange={(e) => addParams("city", e.currentTarget.value)}
           >
             {[{ id: -1, label: "Chọn tỉnh/thành" }, ...cities].map(
@@ -62,6 +93,7 @@ const DeliveryInfoForm: React.FC = () => {
             name="district"
             ref={district}
             className={styles.input}
+            defaultValue={params.get("district") || "-1"}
             onChange={(e) => addParams("district", e.currentTarget.value)}
           >
             {[{ id: -1, label: "Chọn quận/huyện" }, ...districts].map(
@@ -81,6 +113,7 @@ const DeliveryInfoForm: React.FC = () => {
             name="commune"
             ref={commune}
             className={styles.input}
+            defaultValue={params.get("commune") || "-1"}
             onChange={(e) => addParams("commune", e.currentTarget.value)}
           >
             {[{ id: -1, label: "Chọn phường/xã" }, ...communes].map(
@@ -106,11 +139,25 @@ const DeliveryInfoForm: React.FC = () => {
           phụ thuộc vào ứng dụng giao hàng.
         </div>
         <div className={styles.note}>
-          (Qúy khách hàng vui lòng thanh toán phí vận chuyển cho shipper khi
-          nhận hàng
+          (Quý khách hàng vui lòng thanh toán phí vận chuyển cho shipper khi
+          nhận hàng)
         </div>
+        {disabledDelivery ? (
+          <NoCityDelivery />
+        ) : (
+          <DeliveryCheckbox name="deliveryMethod" />
+        )}
       </div>
-      <NoCityDelivery />
+      <div className={styles.paymentInfo}>
+        <div className={styles.title}>Phương thức thanh toán</div>
+        <PaymentCheckbox name="paymentMethod" />
+      </div>
+      <div className={styles.buttonGroup}>
+        <Link href="/products" className={styles.link}>
+          Giỏ hàng
+        </Link>
+        <button className={styles.submit}>Hoàn tất đơn hàng</button>
+      </div>
     </form>
   );
 };

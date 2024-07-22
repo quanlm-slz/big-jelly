@@ -2,8 +2,10 @@ import {
   ProductInterface,
   HotNewsInterface,
   MissionLinkInterface,
+  DeliveryMethod,
+  PaymentMethod,
 } from "@/utils/types";
-import { bread, drink, fries, snack } from "./svg";
+import { bread, drink, fries, money, snack } from "./svg";
 
 export const intro = {
   title: "Giới thiệu",
@@ -236,22 +238,22 @@ export const cities = [
     id: 2,
     label: "Hà Nội",
   },
-]
+];
 
 export const districts = [
   {
     id: 1,
-    label: "Bình Thạnh"
+    label: "Bình Thạnh",
   },
   {
     id: 2,
-    label: "Tân Bình"
+    label: "Tân Bình",
   },
   {
     id: 3,
-    label: "Thủ Đức"
-  }
-]
+    label: "Thủ Đức",
+  },
+];
 
 export const communes = [
   {
@@ -265,5 +267,45 @@ export const communes = [
   {
     id: 3,
     label: "Linh Đông",
+  },
+];
+
+export const deliveryMethods: DeliveryMethod[] = [
+  {
+    id: 1,
+    label: "Giao hàng tận nơi",
+    price: 0,
+  },
+];
+
+export const paymentMethods: PaymentMethod[] = [
+  {
+    id: 1,
+    label: "Thanh toán khi nhận hàng (COD)",
+    icon: money,
+    desc:
+      "Big Belly giao hàng đến tất cả các quận/huyện TP.HCM " +
+      "thông qua dịch vụ giao hàng GrabExpress. Thời gian đặt hàng " +
+      "từ 6:30 - 21:00 với phí vận chuyển và thời gian " +
+      "sẽ phụ thuộc vào ứng dụng giao hàng.",
+    note:
+      "(Quý khách vui lòng thanh toán phí vận chuyển cho shipper ngay khi nhận hàng)"
+  },
+  {
+    id: 2,
+    label: "Chuyển khoản qua ngân hàng",
+    icon: money,
+    desc:
+      "Anh/chị ghi thông tin chuyển khoản là \"TÊN NGƯỜI ĐẶT - SĐT NGƯỜI ĐẶT\" " +
+      "vả chuyển về STK:",
+    note:
+      "- Công ty TNHH Big Jelly\n" +
+      "- STK: 123456789123\n" +
+      "- Ngân hàng (BIDV) TMCP Đầu tư Và Phát triển Việt Nam | CN Thống Nhất"
+  },
+  {
+    id: 3,
+    label: "Ví MoMo",
+    icon: money,
   }
-]
+];
