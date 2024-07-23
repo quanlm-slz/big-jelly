@@ -10,3 +10,25 @@ services:
     ports:
       - 3000:3000
     command: bash -c "npm run dev"
+
+  backend:
+    build:
+      context: backend
+      dockerfile: development.Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./backend/:/app/
+    ports:
+      - 3001:3001
+    command: bash -c "rm -rf ./tmp/pids/server.pid &&
+                      rails s -p 3001 -b '0.0.0.0'"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/lib/var/postgres/data
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: password
