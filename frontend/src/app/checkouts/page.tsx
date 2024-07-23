@@ -2,6 +2,8 @@ import Link from "next/link";
 import styles from "./checkouts.module.scss";
 import DeliveryInfoForm from "./delivery-info-form/DeliveryInfoForm";
 import OrdersDisplay from "./orders-display/OrdersDisplay";
+import CouponApplyForm from "./coupon-apply-form/CouponApplyForm";
+import TotalDisplay from "./total-display/TotalDisplay";
 
 const Checkouts: React.FC = () => {
   return (
@@ -26,6 +28,8 @@ const Checkouts: React.FC = () => {
       </div>
       <div className={styles.summary}>
         <OrdersDisplay />
+        <CouponApplyForm />
+        <TotalDisplay />
       </div>
     </div>
   );

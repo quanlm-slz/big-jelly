@@ -1,0 +1,24 @@
+.container {
+  @apply flex flex-col gap-3 py-5 border-b border-gray-400;
+  .entry {
+    @apply flex justify-between;
+    .title {
+      @apply text-neutral text-sm;
+    }
+    .amount {
+      @apply font-medium text-sm;
+    }
+  }
+}
+.total {
+  @apply flex py-4;
+  .title {
+    @apply text-lg flex-grow my-auto;
+  }
+  .currency {
+    @apply text-gray-400 my-auto text-sm px-2;
+  }
+  .amount {
+    @apply text-2xl font-medium;
+  }
+}
