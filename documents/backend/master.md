@@ -89,4 +89,4 @@
 
 ### End points:
 
-#### Domain 1 end points: [user endpoint](./endpoints/user-endpoints.md)
+#### Customer end points: [end points](./endpoints/customer-endpoints.md)

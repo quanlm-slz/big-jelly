@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+ruby '3.2.4'
+
+gem 'pg', '~> 1.1'
+gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+
+gem 'bootsnap', require: false
+gem 'puma', '>= 5.0'
+gem 'tzinfo-data', platforms: %i[windows jruby]
+
+gem 'active_model_serializers'
+gem 'devise'
+gem 'devise-jwt'
+gem 'dotenv'
+gem 'pundit'
+gem 'sidekiq'
+
+group :development, :test do
+  gem 'annotate'
+  gem 'brakeman'
+  gem 'debug', platforms: %i[mri windows]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+  gem 'shoulda-matchers'
+end
