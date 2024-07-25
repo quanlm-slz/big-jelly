@@ -59,7 +59,7 @@ export interface LocalStorageEntry {
 }
 
 export interface selectOptions {
-  id: number
+  id: number | string;
   label: string;
 }
 
@@ -77,4 +77,4 @@ export interface PaymentMethod {
   note?: string;
 }
 
-export type QueryStatus = ["idle", "loading", "error"]
+export type QueryStatus = ["idle", "loading", "error"];

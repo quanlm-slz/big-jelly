@@ -4,18 +4,19 @@ import { Input } from "@headlessui/react";
 import styles from "./register.module.scss";
 import Link from "next/link";
 import GenderRadio from "./_components/gender-radio/GenderRadio";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
-type Input = {
+export type Input = {
   email: string;
   password: string;
   firstname: string;
   lastname: string;
   birthday: string;
+  gender: string;
 };
 
 const Register: React.FC = () => {
-  const { register, handleSubmit } = useForm<Input>();
+  const { register, handleSubmit, control } = useForm<Input>();
 
   const onSubmit: SubmitHandler<Input> = (data) => {
     const body = {
@@ -26,7 +27,7 @@ const Register: React.FC = () => {
           firstname: data.firstname,
           lastname: data.lastname,
           birthday: data.birthday,
-          gender: "male",
+          gender: data.gender,
         },
       },
     };
@@ -45,11 +46,17 @@ const Register: React.FC = () => {
         __
       </div>
       <form className={styles.right} onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          type="text"
-          placeholder="Họ"
-          className={styles.input}
-          {...register("lastname")}
+        <Controller
+          name="lastname"
+          control={control}
+          render={({ field }) => (
+            <Input
+              type="text"
+              placeholder="Họ"
+              className={styles.input}
+              {...field}
+            />
+          )}
         />
         <Input
           type="text"
@@ -57,7 +64,7 @@ const Register: React.FC = () => {
           className={styles.input}
           {...register("firstname")}
         />
-        <GenderRadio />
+        <GenderRadio control={control} />
         <Input
           type="date"
           placeholder="mm/dd/yy"
