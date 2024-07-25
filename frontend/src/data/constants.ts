@@ -1,4 +1,4 @@
-import { FilterTabInterface, NavlinkInterface } from "@/utils/types";
+import { FilterTabInterface, NavlinkInterface, selectOptions } from "@/utils/types";
 
 export const navlinks: NavlinkInterface[] = [
   { url: "/", title: "Trang chủ" },
@@ -25,5 +25,16 @@ export const filterTabs: FilterTabInterface[] = [
   {
     label: "Thức uống",
     value: "drinks"
+  }
+]
+
+export const genderOptions: selectOptions[] = [
+  {
+    id: 1,
+    label: "Nữ",
+  },
+  {
+    id: 2,
+    label: "Nam"
   }
 ]

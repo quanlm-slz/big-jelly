@@ -22,8 +22,13 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :email, :created_at
   attribute :token, if: :with_token?
+  has_one :profile, if: :with_profile?
 
   def with_token?
     object.token
+  end
+
+  def with_profile?
+    instance_options[:with_profile]
   end
 end

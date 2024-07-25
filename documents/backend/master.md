@@ -26,6 +26,16 @@
 | email | string(50)      | unique      |
 | type  | customer, admin | not null    |
 
+### CustomerProfile
+
+| Field     | Datatype   | Constraints |
+| --------- | ---------- | ----------- |
+| id        | uuid       | primary_key |
+| user_id   | uuid       | foreign_key |
+| firstname | string(50) | not null    |
+| lastname  | string(50) | not null    |
+| birthday  | date       | not null    |
+
 ### Products
 
 | Field    | Datatype   | Constraints |

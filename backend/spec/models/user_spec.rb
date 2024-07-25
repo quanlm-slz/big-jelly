@@ -27,4 +27,12 @@ RSpec.describe User, type: :model do
   describe 'validation' do
     it { expect(user).to be_valid }
   end
+
+  describe 'association' do
+    context 'when customer' do
+      let(:user) { build(:user, :customer) }
+
+      it { expect(user).to have_one(:profile) }
+    end
+  end
 end

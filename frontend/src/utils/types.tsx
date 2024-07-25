@@ -76,3 +76,5 @@ export interface PaymentMethod {
   desc?: string;
   note?: string;
 }
+
+export type QueryStatus = ["idle", "loading", "error"]

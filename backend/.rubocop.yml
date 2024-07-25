@@ -20,3 +20,5 @@ Metrics/BlockLength:
   Enabled: false
 Metrics/MethodLength:
   Enabled: false
+RSpec/ChangeByZero:
+  Enabled: false

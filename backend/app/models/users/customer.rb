@@ -20,4 +20,7 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class Users::Customer < User
+  has_one :profile, class_name: 'CustomerProfile', foreign_key: :user_id, dependent: :nullify, inverse_of: :user
+
+  accepts_nested_attributes_for :profile
 end

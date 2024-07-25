@@ -12,10 +12,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_723_095_555) do
+ActiveRecord::Schema[7.1].define(version: 20_240_725_033_738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'pgcrypto'
   enable_extension 'plpgsql'
+
+  create_table 'customer_profiles', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+    t.uuid 'user_id'
+    t.string 'firstname', null: false
+    t.string 'lastname', null: false
+    t.date 'birthday', null: false
+    t.integer 'gender', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['gender'], name: 'index_customer_profiles_on_gender'
+    t.index ['user_id'], name: 'index_customer_profiles_on_user_id'
+  end
 
   create_table 'jwt_denylists', force: :cascade do |t|
     t.string 'jti', null: false

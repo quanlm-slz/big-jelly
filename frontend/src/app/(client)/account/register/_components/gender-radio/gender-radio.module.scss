@@ -1,0 +1,12 @@
+.container {
+  @apply flex gap-4 my-3;
+  .field {
+    @apply flex gap-2;
+    .radio {
+      @apply border border-gray-200 bg-gray-200 size-5 rounded-full;
+    }
+    .label {
+      @apply my-auto font-semibold;
+    }
+  }
+}
