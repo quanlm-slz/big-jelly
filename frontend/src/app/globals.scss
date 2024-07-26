@@ -10,3 +10,7 @@
     @apply cursor-default shrink-0;
   }
 }
+
+.loader {
+  @apply border-gray-300 size-auto animate-spin rounded-full border-8 border-t-blue-600
+}

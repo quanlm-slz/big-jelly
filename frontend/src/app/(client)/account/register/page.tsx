@@ -1,24 +1,34 @@
 "use client";
 
-import { Input } from "@headlessui/react";
 import styles from "./register.module.scss";
 import Link from "next/link";
 import GenderRadio from "./_components/gender-radio/GenderRadio";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import {
+  FormProvider,
+  SubmitHandler,
+  useForm
+} from "react-hook-form";
+import { ControlledInput } from "../../_components";
+import { SignUpFormInteface, signUpFormSchema } from "@/utils/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
-export type Input = {
-  email: string;
-  password: string;
-  firstname: string;
-  lastname: string;
-  birthday: string;
-  gender: string;
-};
+const RegisterPage: React.FC = () => {
+  const methods = useForm<SignUpFormInteface>({
+    defaultValues: {
+      firstname: "",
+      lastname: "",
+      birthday: "",
+      gender: "",
+      email: "",
+      password: "",
+    },
+    resolver: zodResolver(signUpFormSchema)
+  });
+  const [loading, setLoading] = useState(false)
+  const { handleSubmit, setError } = methods
 
-const Register: React.FC = () => {
-  const { register, handleSubmit, control } = useForm<Input>();
-
-  const onSubmit: SubmitHandler<Input> = (data) => {
+  const onSubmit: SubmitHandler<SignUpFormInteface> = async (data) => {
     const body = {
       customer: {
         email: data.email,
@@ -32,10 +42,22 @@ const Register: React.FC = () => {
       },
     };
 
-    fetch("/api/user/sign_up", {
+    setLoading(true);
+    await fetch("/api/user/sign_up", {
       method: "post",
       body: JSON.stringify(body),
-    });
+    })
+    .then(res => res.json())
+    .then((data: Record<any, any>) => {
+      if (data.status == 'error') {
+        const message = data.message as Record<any, Array<string>>
+        Object.entries(message).map(([key, value]) => {
+          setError(key, { message: value.at(0) });
+        })
+      } else {
+      }
+    })
+    setLoading(false);
   };
 
   return (
@@ -45,56 +67,32 @@ const Register: React.FC = () => {
         <br />
         __
       </div>
-      <form className={styles.right} onSubmit={handleSubmit(onSubmit)}>
-        <Controller
-          name="lastname"
-          control={control}
-          render={({ field }) => (
-            <Input
-              type="text"
-              placeholder="Họ"
-              className={styles.input}
-              {...field}
-            />
-          )}
-        />
-        <Input
-          type="text"
-          placeholder="Tên"
-          className={styles.input}
-          {...register("firstname")}
-        />
-        <GenderRadio control={control} />
-        <Input
-          type="date"
-          placeholder="mm/dd/yy"
-          className={styles.input}
-          {...register("birthday")}
-        />
-        <Input
-          type="text"
-          placeholder="Email"
-          className={styles.input}
-          {...register("email")}
-        />
-        <Input
-          type="password"
-          placeholder="Mật khẩu"
-          className={styles.input}
-          {...register("password")}
-        />
-        <div className={styles.note}>
-          This site is protected by reCAPTCHA and the Google{" "}
-          <a>Privacy Policy</a>
-          and <a>Terms of Service</a> apply.
-        </div>
-        <button className={styles.submit}>Đăng Ký</button>
-        <Link href="/" className={styles.link}>
-          &larr; <span>Quay lại trang chủ</span>
-        </Link>
-      </form>
+      <FormProvider {...methods}>
+        <form className={styles.right} onSubmit={handleSubmit(onSubmit)}>
+          <ControlledInput name="lastname" placeholder="Họ" className={styles.input} />
+          <ControlledInput name="firstname" placeholder="Tên" className={styles.input} />
+          <GenderRadio />
+          <ControlledInput type="date" name="birthday" className={styles.input} />
+          <ControlledInput name="email" placeholder="Email" className={styles.input} />
+          <ControlledInput type="password" name="password" placeholder="Mật khẩu" className={styles.input} />
+          <div className={styles.note}>
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a>Privacy Policy</a>
+            and <a>Terms of Service</a> apply.
+          </div>
+          <button className={styles.submit} disabled={loading}>
+            { loading ?
+                <span className={`loader ${styles.loader}`} /> :
+                <span>Đăng Ký</span>
+            }
+          </button>
+          <Link href="/" className={styles.link}>
+            &larr; <span>Quay lại trang chủ</span>
+          </Link>
+        </form>
+      </FormProvider>
     </div>
   );
 };
 
-export default Register;
+export default RegisterPage;

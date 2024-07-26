@@ -7,6 +7,10 @@ Devise.setup do |config|
 
   config.jwt do |jwt|
     jwt.secret = Rails.application.credentials.devise_token_secret
+    jwt.dispatch_requests = [
+      ['POST', %r{^/customers/sign_in}],
+      ['POST', %r{^/customers/sign_up}],
+    ]
   end
 
   config.case_insensitive_keys = [:email]

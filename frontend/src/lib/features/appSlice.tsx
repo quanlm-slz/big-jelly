@@ -30,8 +30,7 @@ const appSlice = createSlice({
   },
 });
 
-const { setVisited, initializeClientStates } = appSlice.actions;
 const AppReducer = appSlice.reducer;
 
 export default AppReducer;
-export { setVisited, initializeClientStates, appSlice };
+export const { setVisited, initializeClientStates } = appSlice.actions;

@@ -27,6 +27,7 @@ RSpec.describe 'Customers::Registrations', type: :request do
       before { request }
 
       it_behaves_like 'successful_response'
+      it { expect(respond_body.dig('data', 'token')).not_to be_nil }
     end
 
     context 'when invalid input request' do

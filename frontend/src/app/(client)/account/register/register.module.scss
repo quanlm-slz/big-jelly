@@ -16,7 +16,13 @@
       }
     }
     .submit {
-      @apply mr-auto my-6 px-8 py-5 bg-primary text-secondary font-medium uppercase;
+      @apply mr-auto h-14 w-32 my-6 bg-primary text-secondary font-medium uppercase flex disabled:bg-red-300;
+      span {
+        @apply m-auto;
+      }
+      .loader {
+        @apply size-8 border-4;
+      }
     }
     .link {
       @apply font-medium;

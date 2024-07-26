@@ -8,7 +8,7 @@ module ErrorHelper
   end
 
   def respond_invalid_record(error)
-    response_error(error.record.errors.full_messages, code: 422)
+    response_error(error.record.errors.messages, code: 422)
   end
 
   private

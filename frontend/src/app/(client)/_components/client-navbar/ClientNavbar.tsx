@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { initializeClientStates } from "@/lib/features/appSlice";
 import { initializeCart } from "@/lib/features/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
+import { initializeUser } from "@/lib/features/userSlice";
 
 const ClientNavbar: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -15,6 +16,7 @@ const ClientNavbar: React.FC = () => {
   useEffect(() => {
     dispatch(initializeClientStates());
     dispatch(initializeCart());
+    dispatch(initializeUser());
   }, []);
 
 

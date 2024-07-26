@@ -4,5 +4,6 @@ import ClientFooter from "./client-footer/ClientFooter";
 import HotDeals from "./hot-deals/HotDeals";
 import InfoCollectForm from "./info-collect-form/InfoCollectForm";
 import HotNews from "./hot-news/HotNews";
+import ControlledInput from "./controlled-input/ControlledInput";
 
-export { Hero, ClientNavbar, ClientFooter, InfoCollectForm, HotDeals, HotNews };
+export { Hero, ClientNavbar, ClientFooter, InfoCollectForm, HotDeals, HotNews, ControlledInput };

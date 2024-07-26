@@ -1,10 +1,11 @@
 import { Field, Label, Radio, RadioGroup } from "@headlessui/react";
 import styles from "./gender-radio.module.scss";
 import { genderOptions } from "@/data/constants";
-import { Control, Controller } from "react-hook-form";
+import { Control, Controller, useFormContext } from "react-hook-form";
 import { Input } from "../../page";
 
-const GenderRadio: React.FC<{ control: Control<Input> }> = ({ control }) => {
+const GenderRadio: React.FC = () => {
+  const { control } = useFormContext();
   return (
     <Controller
       name="gender"
