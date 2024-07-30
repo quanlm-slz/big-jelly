@@ -17,6 +17,9 @@
     }
     .submit {
       @apply mr-auto h-14 w-32 my-6 bg-primary text-secondary font-medium uppercase flex disabled:bg-red-300;
+      &>* {
+        @apply hover:cursor-pointer
+      }
       span {
         @apply m-auto;
       }

@@ -3,8 +3,8 @@
 class Customers::RegistrationsController < Devise::RegistrationsController
   def create
     ActiveRecord::Base.transaction do
-      super do |customer|
-        raise ActiveRecord::RecordInvalid, customer unless customer.persisted? && !customer.profile.nil?
+      super do |user|
+        raise ActiveRecord::RecordInvalid, user if user.errors.present?
       end
     end
   end

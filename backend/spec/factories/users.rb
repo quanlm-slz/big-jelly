@@ -26,6 +26,7 @@ FactoryBot.define do
     type { Users::Customer.name }
 
     trait :customer do
+      profile_attributes { attributes_for(:customer_profile) }
       initialize_with { Users::Customer.new }
     end
 

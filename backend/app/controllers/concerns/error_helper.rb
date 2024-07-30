@@ -8,7 +8,9 @@ module ErrorHelper
   end
 
   def respond_invalid_record(error)
-    response_error(error.record.errors.messages, code: 422)
+    errors = error.record.errors.to_hash(full_messages: true)
+    error_messages = errors.transform_values(&:first)
+    response_error(error_messages, code: 422)
   end
 
   private

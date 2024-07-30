@@ -34,5 +34,5 @@ en:
         user:
           attributes:
             email:
-              taken: "Email đã đăng ký, sử dụng email khác hoặc đăng nhập"
+              taken: "đã đăng ký, sử dụng email khác hoặc đăng nhập"
 
