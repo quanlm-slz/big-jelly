@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@reduxjs/toolkit": "^2.2.6",
     "@types/lodash": "^4.17.7",
+    "axios": "^1.7.2",
     "dotenv-safe": "^9.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",

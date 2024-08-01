@@ -7,10 +7,11 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { ControlledInput } from "../../_components";
 import { SignUpFormInteface, signUpFormSchema } from "@/utils/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { registerUser } from "@/lib/features/userSlice";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useAppDispatch } from "@/lib/hooks";
-import { loggedInWithToken } from "@/lib/features/userSlice";
+import cookie from "@boiseitguru/cookie-cutter";
 
 const RegisterPage: React.FC = () => {
   const methods = useForm<SignUpFormInteface>({
@@ -24,12 +25,30 @@ const RegisterPage: React.FC = () => {
     },
     resolver: zodResolver(signUpFormSchema),
   });
-  const [loading, setLoading] = useState(false);
-  const { handleSubmit, setError } = methods;
-  const router = useRouter();
-  const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<SignUpFormInteface> = (data) => {
+  const { handleSubmit, setError } = methods;
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const status = useAppSelector((state) => state.user.status);
+  const error = useAppSelector((state) => state.user.error) as Record<any, any>;
+  const token = useAppSelector((state) => state.user.token) as string;
+
+  useEffect(() => {
+    switch (status) {
+      case "error":
+        Object.entries(error).map(([key, value]) => {
+          setError(key, { type: "manual", message: value });
+        });
+        break;
+      case "loggedIn":
+        cookie.set("token", token);
+        router.push("/");
+        break;
+    }
+  }, [error, status]);
+
+  const onSubmit: SubmitHandler<SignUpFormInteface> = async (data) => {
     const body = {
       customer: {
         email: data.email,
@@ -43,24 +62,7 @@ const RegisterPage: React.FC = () => {
       },
     };
 
-    setLoading(true);
-    fetch("/api/user/sign_up", {
-      method: "post",
-      body: JSON.stringify(body),
-    })
-      .then((res) => res.json())
-      .then((data: Record<any, any>) => {
-        if (data.status == "error") {
-          const message = data.message as Record<string, string>;
-          Object.entries(message).map(([key, value]) => {
-            setError(key, { message: value });
-          });
-        } else {
-          dispatch(loggedInWithToken(data.data.token));
-          setLoading(false);
-          router.push("/");
-        }
-      });
+    dispatch(registerUser(body));
   };
 
   return (
@@ -104,8 +106,8 @@ const RegisterPage: React.FC = () => {
             <a>Privacy Policy</a>
             and <a>Terms of Service</a> apply.
           </div>
-          <button className={styles.submit} disabled={loading}>
-            {loading ? (
+          <button className={styles.submit} disabled={status === "loading"}>
+            {status === "loading" ? (
               <span className={`loader ${styles.loader}`} />
             ) : (
               <span>Đăng Ký</span>

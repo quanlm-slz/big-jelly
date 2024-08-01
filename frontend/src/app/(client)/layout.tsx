@@ -1,18 +1,17 @@
 "use client";
 
-import { PropsWithChildren } from "react";
-import ClientNavbar from "./_components/client-navbar/ClientNavbar";
-import ClientFooter from "./_components/client-footer/ClientFooter";
 import { StoreProvider } from "@/components";
+import { PropsWithChildren } from "react";
+import { UserStoreInitializer } from "./_components";
 
-const HomeLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <StoreProvider>
-      <ClientNavbar />
-      {children}
-      <ClientFooter />
+      <UserStoreInitializer>
+        <div>{children}</div>
+      </UserStoreInitializer>
     </StoreProvider>
   );
 };
 
-export default HomeLayout;
+export default Layout;
