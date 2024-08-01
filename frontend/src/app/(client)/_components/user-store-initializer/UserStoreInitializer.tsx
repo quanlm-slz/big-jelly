@@ -7,12 +7,13 @@ import { PropsWithChildren, useEffect } from "react";
 
 const UserStoreInitializer: React.FC<PropsWithChildren> = ({ children }) => {
   const dispatch = useAppDispatch();
-  const token = cookie.get("token");
   const status = useAppSelector((state) => state.user.status);
 
   useEffect(() => {
     dispatch(initializeClientStates());
     dispatch(initializeCart());
+    const token = cookie.get("token");
+    console.log(token);
     token && dispatch(initializeUser(token));
   }, []);
 

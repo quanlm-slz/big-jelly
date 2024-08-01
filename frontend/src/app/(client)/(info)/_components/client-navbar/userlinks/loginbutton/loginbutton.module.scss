@@ -1,7 +1,13 @@
 .container {
-  @apply h-[28px] w-[28px] flex flex-col justify-evenly hover:cursor-pointer;
+  @apply h-full py-6 w-[28px] flex flex-col justify-evenly hover:cursor-pointer;
   * {
     @apply hover:cursor-pointer;
+  }
+}
+.panel {
+  @apply flex flex-col py-2 bg-secondary w-44 mt-2;
+  .link {
+    @apply px-2 py-2 text-neutral hover:cursor-pointer hover:text-primary;
   }
 }
 
@@ -11,7 +17,7 @@
 }
 
 .line.active:nth-child(1) {
-  @apply translate-y-[10px] rotate-45;
+  @apply translate-y-[11px] rotate-45;
 }
 
 .line.active:nth-child(2) {

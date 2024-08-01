@@ -1,5 +1,5 @@
 .container {
-  @apply relative h-fit w-fit;
+  @apply relative h-fit w-fit my-auto;
   .btnGroup {
     @apply relative h-6 w-6;
     .cover {

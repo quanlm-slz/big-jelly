@@ -42,7 +42,7 @@ const RegisterPage: React.FC = () => {
         });
         break;
       case "loggedIn":
-        cookie.set("token", token);
+        cookie.set("token", token, { path: "/" });
         router.push("/");
         break;
     }

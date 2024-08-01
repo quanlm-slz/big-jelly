@@ -1,4 +1,4 @@
-FROM ruby:3.2
+FROM ruby:3.2.4
 
 WORKDIR /app/
 RUN apt update && apt install -y vim
