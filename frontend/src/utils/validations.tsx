@@ -1,14 +1,20 @@
-import { z, ZodSchema } from 'zod';
+import { z, ZodSchema } from "zod";
 
-const notEmptyError = (attr: string) => ( `Vui lòng không để trống ${attr}` )
+const notEmptyError = (attr: string) => `Vui lòng không để trống ${attr}`;
 
 export const signUpFormSchema: ZodSchema = z.object({
-  lastname: z.string().min(1, { message: notEmptyError("họ")}),
-  firstname: z.string().min(1, { message: notEmptyError("tên")}),
+  lastname: z.string().min(1, { message: notEmptyError("họ") }),
+  firstname: z.string().min(1, { message: notEmptyError("tên") }),
   gender: z.enum(["male", "female"]),
   birthday: z.string().min(1, { message: notEmptyError("sinh nhật") }),
-  email: z.string().email({ message: "Vui lòng điền email hợp lệ"}),
-  password: z.string().min(1, { message: notEmptyError("mật khẩu") })
-})
+  email: z.string().email({ message: "Vui lòng điền email hợp lệ" }),
+  password: z.string().min(1, { message: notEmptyError("mật khẩu") }),
+});
 
-export type SignUpFormInteface = z.infer<typeof signUpFormSchema>
+export const signInFormSchema: ZodSchema = z.object({
+  email: z.string().min(1, { message: "Vui lòng điền email hợp lệ" }),
+  password: z.string().min(1, { message: notEmptyError("mật khẩu") }),
+});
+
+export type SignUpFormInteface = z.infer<typeof signUpFormSchema>;
+export type SignInFormInterface = z.infer<typeof signInFormSchema>;

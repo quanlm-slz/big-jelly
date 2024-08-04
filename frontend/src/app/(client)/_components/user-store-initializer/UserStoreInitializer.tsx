@@ -13,16 +13,15 @@ const UserStoreInitializer: React.FC<PropsWithChildren> = ({ children }) => {
     dispatch(initializeClientStates());
     dispatch(initializeCart());
     const token = cookie.get("token");
-    console.log(token);
     token && dispatch(initializeUser(token));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (status === "error") {
       cookie.set("token", "");
       dispatch(resetStore());
     }
-  }, [status]);
+  }, [status, dispatch]);
 
   return <>{children}</>;
 };

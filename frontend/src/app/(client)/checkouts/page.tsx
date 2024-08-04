@@ -4,6 +4,7 @@ import DeliveryInfoForm from "./delivery-info-form/DeliveryInfoForm";
 import OrdersDisplay from "./orders-display/OrdersDisplay";
 import CouponApplyForm from "./coupon-apply-form/CouponApplyForm";
 import TotalDisplay from "./total-display/TotalDisplay";
+import { Suspense } from "react";
 
 const Checkouts: React.FC = () => {
   return (
@@ -22,7 +23,9 @@ const Checkouts: React.FC = () => {
           <div className={styles.login}>
             Bạn đã có tài khoản? <Link href="/">Đăng nhập</Link>
           </div>
-          <DeliveryInfoForm />
+          <Suspense>
+            <DeliveryInfoForm />
+          </Suspense>
         </div>
         <div className={styles.footer}>Powered by Haravan</div>
       </div>

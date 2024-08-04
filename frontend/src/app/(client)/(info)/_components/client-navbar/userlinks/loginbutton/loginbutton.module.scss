@@ -1,5 +1,5 @@
 .container {
-  @apply h-full py-6 w-[28px] flex flex-col justify-evenly hover:cursor-pointer;
+  @apply h-full py-6 w-[28px] flex flex-col justify-evenly hover:cursor-pointer focus:outline-none;
   * {
     @apply hover:cursor-pointer;
   }

@@ -46,7 +46,7 @@ const RegisterPage: React.FC = () => {
         router.push("/");
         break;
     }
-  }, [error, status]);
+  }, [error, status, router, setError, token]);
 
   const onSubmit: SubmitHandler<SignUpFormInteface> = async (data) => {
     const body = {
@@ -68,9 +68,11 @@ const RegisterPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        Tạo tài khoản
-        <br />
-        __
+        <div className={styles.text}>
+          Tạo tài khoản
+          <br />
+          __
+        </div>
       </div>
       <FormProvider {...methods}>
         <form className={styles.right} onSubmit={handleSubmit(onSubmit)}>

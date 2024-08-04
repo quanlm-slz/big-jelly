@@ -30,8 +30,8 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     resetStore: (state) => {
-      state.status = "idle"
-    }
+      state.status = "idle";
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -47,6 +47,19 @@ const userSlice = createSlice({
       })
       .addCase(registerUser.rejected, errorHandler)
       .addCase(registerUser.pending, loadingHandler)
+
+      .addCase(loginUser.fulfilled, (state, { payload }) => {
+        if (payload.status === "success") {
+          state.user.email = payload.data.email;
+          state.token = payload.data.token;
+          state.status = "loggedIn";
+        } else {
+          state.error = payload.message as Record<any, any>;
+          state.status = "error";
+        }
+      })
+      .addCase(loginUser.rejected, errorHandler)
+      .addCase(loginUser.pending, loadingHandler)
 
       .addCase(initializeUser.fulfilled, (state, { payload }) => {
         if (payload.status === "success") {
@@ -67,6 +80,20 @@ export const registerUser = createAsyncThunk(
   async (userData: Record<any, any>, { rejectWithValue }) => {
     try {
       const response = await axios.post("/api/customers/sign_up", userData, {
+        validateStatus: () => true,
+      });
+      return response.data;
+    } catch (error) {
+      rejectWithValue({ general: "Internal server error" });
+    }
+  },
+);
+
+export const loginUser = createAsyncThunk(
+  "user/loginUser",
+  async (userData: Record<any, any>, { rejectWithValue }) => {
+    try {
+      const response = await axios.post("/api/customers/sign_in", userData, {
         validateStatus: () => true,
       });
       return response.data;
