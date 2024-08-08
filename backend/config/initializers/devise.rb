@@ -11,6 +11,9 @@ Devise.setup do |config|
       ['POST', %r{^/customers/sign_in}],
       ['POST', %r{^/customers/sign_up}],
     ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/customers/sign_out}]
+    ]
   end
 
   config.case_insensitive_keys = [:email]

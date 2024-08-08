@@ -1,3 +1,4 @@
+import cookie from "@boiseitguru/cookie-cutter";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -71,7 +72,19 @@ const userSlice = createSlice({
         }
       })
       .addCase(initializeUser.rejected, errorHandler)
-      .addCase(initializeUser.pending, loadingHandler);
+      .addCase(initializeUser.pending, loadingHandler)
+
+      .addCase(logoutUser.fulfilled, (state, { payload }) => {
+        if (payload.status === "success") {
+          state.token = "";
+          state.status = "idle";
+          state.user = {};
+        } else {
+          state.status = "error";
+        }
+      })
+      .addCase(logoutUser.rejected, errorHandler)
+      .addCase(logoutUser.pending, loadingHandler);
   },
 });
 
@@ -108,6 +121,21 @@ export const initializeUser = createAsyncThunk(
   async (token: string | undefined, { rejectWithValue }) => {
     try {
       const response = await axios.get("/api/customers/me", {
+        headers: { Authorization: token || "" },
+        validateStatus: () => true,
+      });
+      return { ...response.data, token };
+    } catch (error) {
+      rejectWithValue({ general: "Internal server error" });
+    }
+  },
+);
+
+export const logoutUser = createAsyncThunk(
+  "user/logoutUser",
+  async (token: string | undefined, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete("/api/customers/sign_out", {
         headers: { Authorization: token || "" },
         validateStatus: () => true,
       });

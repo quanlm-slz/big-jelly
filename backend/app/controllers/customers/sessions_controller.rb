@@ -7,6 +7,7 @@ class Customers::SessionsController < Devise::SessionsController
   end
 
   def respond_to_on_destroy
+    sign_out
     respond_with_success(nil)
   end
 end
