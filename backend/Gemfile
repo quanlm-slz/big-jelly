@@ -18,6 +18,7 @@ gem 'devise-jwt'
 gem 'dotenv'
 gem 'pundit'
 gem 'sidekiq'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'annotate'
