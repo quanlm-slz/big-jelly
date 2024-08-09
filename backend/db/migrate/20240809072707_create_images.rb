@@ -1,7 +1,8 @@
 class CreateImages < ActiveRecord::Migration[7.1]
   def change
     create_table :images, id: :uuid do |t|
-      t.string :type, null: false
+      t.string      :type, null: false
+      t.references  :imageable, type: :uuid
 
       t.timestamps
     end

@@ -38,19 +38,20 @@
 
 ### Products
 
-| Field    | Datatype   | Constraints |
-| -------- | ---------- | ----------- |
-| id       | uuid       | primary_key |
-| title    | string(50) | not null    |
-| note     | string(50) | nullable    |
-| price    | integer    | not null    |
-| image_id | uuid       | foreign_key |
+| Field       | Datatype    | Constraints |
+| ----------- | ----------- | ----------- |
+| id          | uuid        | primary_key |
+| title       | string(100) | not null    |
+| description | string(300) | nullable    |
+| note        | string(300) | nullable    |
+| price       | integer     | not null    |
 
 ### Images
 
-| Field | Datatype | constraints |
-| ----- | -------- | ----------- |
-| id    | uuid     | primary_key |
+| Field        | Datatype | constraints |
+| ------------ | -------- | ----------- |
+| id           | uuid     | primary_key |
+| imageable_id | uuid     | foreign_key |
 
 ## Api
 

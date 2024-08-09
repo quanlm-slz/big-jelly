@@ -2,14 +2,16 @@
 #
 # Table name: images
 #
-#  id         :uuid             not null, primary key
-#  type       :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :uuid             not null, primary key
+#  type         :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  imageable_id :uuid
 #
 # Indexes
 #
-#  index_images_on_type  (type)
+#  index_images_on_imageable_id  (imageable_id)
+#  index_images_on_type          (type)
 #
 require 'rails_helper'
 
@@ -18,6 +20,10 @@ RSpec.describe Images::ProductImage, type: :model do
 
   describe "validation" do
     it { expect(image).to be_valid }
+  end
+
+  describe "association" do
+    it { expect(image).to belong_to(:product) }
   end
 
   describe "after created" do
